@@ -5,17 +5,18 @@ import { Heroe } from '../../interfaces/heroes.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-  
 })
 export class ListadoComponent implements OnInit {
 
-  heroes:Heroe[] = [];
-
+  heroes: Heroe[] = [];
+  
   constructor( private heroesService: HeroesService ) { }
 
   ngOnInit(): void {
+
     this.heroesService.getHeroes()
-    .subscribe( heroes => this.heroes = heroes );
+      .subscribe( heroes => this.heroes = heroes );
+
   }
 
 }
